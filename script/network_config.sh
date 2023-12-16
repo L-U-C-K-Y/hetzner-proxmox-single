@@ -96,7 +96,7 @@ iface ${NETWORK_INTERFACE} inet manual
 auto vmbr0
 iface vmbr0 inet static
     address  ${MAINSERVERIP}
-    netmask  ${NETMASK}
+    netmask  32
     gateway  ${GATEWAYADDRESS}
     broadcast  ${BROADCASTIP}
     bridge-ports ${NETWORK_INTERFACE}
