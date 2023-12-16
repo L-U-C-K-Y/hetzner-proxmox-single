@@ -22,6 +22,8 @@ auto vmbr${external_bridge_id}
 iface vmbr${external_bridge_id} inet static
     address ${ip}
     netmask ${NETMASK}
+    gateway ${GATEWAYADDRESS}
+    broadcast ${BROADCASTIP}
     bridge_ports none
     bridge_stp off
     bridge_fd 0
@@ -94,7 +96,7 @@ iface ${NETWORK_INTERFACE} inet manual
 auto vmbr0
 iface vmbr0 inet static
     address  ${MAINSERVERIP}
-    netmask  32
+    netmask  ${NETMASK}
     gateway  ${GATEWAYADDRESS}
     broadcast  ${BROADCASTIP}
     bridge-ports ${NETWORK_INTERFACE}
